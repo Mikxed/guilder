@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('guilds', 'GuildController@getGuilds');
+Route::group(['prefix' => 'guild'], function () {
+    Route::post('add', 'GuildController@add');
+    Route::get('edit/{id}', 'GuildController@edit');
+    Route::post('update/{id}', 'GuildController@update');
+    Route::delete('delete/{id}', 'GuildController@delete');
+});
