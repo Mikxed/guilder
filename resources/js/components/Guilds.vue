@@ -17,7 +17,13 @@
                 <td>{{ guild.name }}</td>
                 <td>{{ guild.realm }}</td>
                 <td>
-                    <button>Manage</button>
+                    <v-btn
+                      color="primary"
+                      depressed
+                      elevation="2"
+                      outlined
+                      >
+                    </v-btn>
                 </td>
             </tr>
             </tbody>
@@ -26,21 +32,21 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                guilds: []
-            }
-        },
-        created() {
-            this.axios
-                .get('/api/guilds')
-                .then(response => {
-                    this.guilds = response.data;
-                });
-        },
-        methods: {
+export default {
+  data() {
+    return {
+      guilds: [],
+    };
+  },
+  created() {
+    this.axios
+      .get('/api/guilds')
+      .then((response) => {
+        this.guilds = response.data;
+      });
+  },
+  methods: {
 
-        }
-    }
+  },
+};
 </script>
