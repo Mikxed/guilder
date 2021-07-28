@@ -1,17 +1,22 @@
 <template>
     <div>
-        <h3 class="text-center">All guilds</h3><br/>
+      <h3 class="text-center">All guilds</h3><br/>
 
-        <table class="table table-bordered">
-            <thead>
+      <v-card
+        elevation="2"
+        shaped
+      >
+      <v-simple-table dark>
+        <template v-slot:default>
+          <thead>
             <tr>
                 <th>ID</th>
                 <th>Guild</th>
                 <th>Realm</th>
                 <th></th>
             </tr>
-            </thead>
-            <tbody>
+          </thead>
+          <tbody>
             <tr v-for="guild in guilds" :key="guild.id">
                 <td>{{ guild.id }}</td>
                 <td>{{ guild.name }}</td>
@@ -26,8 +31,11 @@
                     </v-btn>
                 </td>
             </tr>
-            </tbody>
-        </table>
+          </tbody>
+        </template>
+      </v-simple-table>
+</v-card>
+
     </div>
 </template>
 
