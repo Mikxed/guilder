@@ -1,42 +1,34 @@
 <template>
-    <div>
-      <h3 class="text-center">All guilds</h3><br/>
+  <div>
+    <h3 class="text-center">All guilds</h3>
+    <br />
 
-      <v-card
-        elevation="2"
-        shaped
-      >
+    <v-card elevation="2" shaped>
       <v-simple-table dark>
         <template v-slot:default>
           <thead>
             <tr>
-                <th>ID</th>
-                <th>Guild</th>
-                <th>Realm</th>
-                <th></th>
+              <th>ID</th>
+              <th>Guild</th>
+              <th>Realm</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="guild in guilds" :key="guild.id">
-                <td>{{ guild.id }}</td>
-                <td>{{ guild.name }}</td>
-                <td>{{ guild.realm }}</td>
-                <td>
-                    <v-btn
-                      color="primary"
-                      depressed
-                      elevation="2"
-                      outlined
-                      >
-                    </v-btn>
-                </td>
+              <td>{{ guild.id }}</td>
+              <td>{{ guild.name }}</td>
+              <td>{{ guild.realm }}</td>
+              <td>
+                <v-btn color="primary" depressed elevation="2" outlined>
+                </v-btn>
+              </td>
             </tr>
           </tbody>
         </template>
       </v-simple-table>
-</v-card>
-
-    </div>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -47,14 +39,10 @@ export default {
     };
   },
   created() {
-    this.axios
-      .get('/api/guilds')
-      .then((response) => {
-        this.guilds = response.data;
-      });
+    this.axios.get('/api/guilds').then((response) => {
+      this.guilds = response.data;
+    });
   },
-  methods: {
-
-  },
+  methods: {},
 };
 </script>

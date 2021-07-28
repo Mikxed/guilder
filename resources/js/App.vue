@@ -1,10 +1,5 @@
 <template>
     <div class="container">
-        <div class="text-center" style="margin: 20px 0px 20px 0px;">
-            <a href="https://shouts.dev/" target="_blank"><img src="https://i.imgur.com/hHZjfUq.png"></a><br>
-            <span class="text-secondary">Laravel & Vue CRUD Single Page Application (SPA) Tutorial</span>
-        </div>
-
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav">
