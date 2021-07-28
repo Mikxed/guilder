@@ -9,11 +9,15 @@ import VueAxios from 'vue-axios';
 import axios from 'axios';
 import App from './App.vue';
 import { routes } from './routes';
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
 
 require('./bootstrap');
 
 window.Vue = require('vue');
 
+Vue.use(VueMaterial)
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 const router = new VueRouter({

@@ -1,48 +1,66 @@
 <template>
   <div>
-    <h3 class="text-center">All guilds</h3>
-    <br />
-
-    <v-card elevation="2" shaped>
-      <v-simple-table dark>
-        <template v-slot:default>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Guild</th>
-              <th>Realm</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="guild in guilds" :key="guild.id">
-              <td>{{ guild.id }}</td>
-              <td>{{ guild.name }}</td>
-              <td>{{ guild.realm }}</td>
-              <td>
-                <v-btn color="primary" depressed elevation="2" outlined>
-                </v-btn>
-              </td>
-            </tr>
-          </tbody>
-        </template>
-      </v-simple-table>
-    </v-card>
+    <md-table md-card @md-selected="onSelect">
+      <md-table-toolbar>
+        <h1 class="md-title">All guilds</h1>
+        <router-link to="/guilds/create">
+          <md-button class="md-fab md-mini md-primary md-raised" @click="onAdd">
+              <md-icon>add</md-icon>
+          </md-button>
+        </router-link>
+      </md-table-toolbar>
+      <md-table-row>
+          <md-table-head md-numeric>ID</md-table-head>
+          <md-table-head>Guild</md-table-head>
+          <md-table-head>Realm</md-table-head>
+          <md-table-head/>
+      </md-table-row>
+      <md-table-row v-for="guild in guilds" :key="guild.id">
+        <md-table-cell md-numeric>{{ guild.id }}</md-table-cell>
+        <md-table-cell>{{ guild.name }}</md-table-cell>
+        <md-table-cell>{{ guild.realm }}</md-table-cell>
+        <md-table-cell>
+          <md-button class="md-fab md-mini md-primary md-raised" @click="onEdit(guild)">
+            <md-icon>edit</md-icon>
+          </md-button>
+          <md-button class="md-fab md-mini md-raised">
+            <md-icon>delete</md-icon>
+          </md-button>
+        </md-table-cell>
+      </md-table-row>
+    </md-table>
   </div>
 </template>
 
 <script>
+import guildApi from '../api/guild'
+
 export default {
   data() {
     return {
       guilds: [],
     };
   },
-  created() {
-    this.axios.get('/api/guilds').then((response) => {
-      this.guilds = response.data;
-    });
+  async created() {
+    try {
+      this.guilds = await guildApi.getAllGuilds();
+    } catch (e) {
+      console.error(e)
+    }
   },
-  methods: {},
+  methods: {
+    onSelect(asd) {
+      console.log(asd)
+    },
+    onEdit(asd) {
+      console.log(asd)
+    },
+    onAdd(asd) {
+      console.log(asd)
+    },
+    onDelete(asd) {
+      console.log(asd)
+    },
+  },
 };
 </script>

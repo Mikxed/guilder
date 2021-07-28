@@ -23,3 +23,5 @@ Route::group(['prefix' => 'guild'], function () {
     Route::post('update/{id}', 'GuildController@update');
     Route::delete('delete/{id}', 'GuildController@delete');
 });
+
+Route::get('realms', 'GuildController@getRealms');

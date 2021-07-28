@@ -6,6 +6,7 @@
     <meta name="csrf-token" value="{{ csrf_token() }}"/>
     <title>Laravel & Vue CRUD Single Page Application (SPA) Tutorial - MyNotePaper</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet"/>
     <style>
         .bg-light {

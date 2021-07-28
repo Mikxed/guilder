@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Guild;
+use App\Realm;
 
 class GuildController extends Controller
 {
@@ -17,5 +18,9 @@ class GuildController extends Controller
         ->join('realms', 'realms.id', 'guilds.realm_id')
         ->get();
         return $guilds;
+    }
+    public function getRealms()
+    {
+        return Realm::all();
     }
 }
