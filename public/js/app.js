@@ -2001,6 +2001,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37826,55 +37834,64 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("All guilds")]),
-    _c("br"),
-    _vm._v(" "),
-    _c("table", { staticClass: "table table-bordered" }, [
-      _vm._m(0),
+  return _c(
+    "div",
+    [
+      _c("h3", { staticClass: "text-center" }, [_vm._v("All guilds")]),
+      _c("br"),
       _vm._v(" "),
       _c(
-        "tbody",
-        _vm._l(_vm.guilds, function(guild) {
-          return _c("tr", { key: guild.id }, [
-            _c("td", [_vm._v(_vm._s(guild.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(guild.name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(guild.realm))]),
-            _vm._v(" "),
-            _vm._m(1, true)
-          ])
-        }),
-        0
+        "v-card",
+        { attrs: { elevation: "2", shaped: "" } },
+        [
+          _c("v-simple-table", {
+            attrs: { dark: "" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function() {
+                  return [
+                    _c("thead", [
+                      _c("tr", [
+                        _c("th", [_vm._v("ID")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Guild")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Realm")]),
+                        _vm._v(" "),
+                        _c("th")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.guilds, function(guild) {
+                        return _c("tr", { key: guild.id }, [
+                          _c("td", [_vm._v(_vm._s(guild.id))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(guild.name))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(guild.realm))]),
+                          _vm._v(" "),
+                          _c("td", [_c("button", [_vm._v("Manage")])])
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                },
+                proxy: true
+              }
+            ])
+          })
+        ],
+        1
       )
-    ])
-  ])
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("ID")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Guild")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Realm")]),
-        _vm._v(" "),
-        _c("th")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [_c("button", [_vm._v("Manage")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -53601,8 +53618,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Miko\Documents\Projects\guilder\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Miko\Documents\Projects\guilder\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! F:\Koodi\Projektit\guilder\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! F:\Koodi\Projektit\guilder\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
