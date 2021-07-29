@@ -12,7 +12,15 @@
         <md-autocomplete v-model="guildRealm" :md-options="realms">
           <label>Realm</label>
         </md-autocomplete>
-    </md-card-content>
+        <div class="md-layout">
+          <md-autocomplete v-model="guildRealm" :md-options="players">
+            <label>Invite player</label>
+          </md-autocomplete>
+          <md-button class="md-fab md-mini md-primary md-raised" @click="onAdd">
+              <md-icon>add</md-icon>
+          </md-button>
+        </div>
+      </md-card-content>
     </md-card>
   </div>
 </template>
@@ -31,7 +39,10 @@ export default {
   },
   async created() {
     try {
-      this.realms = await guildApi.getAllRealms();
+      const realms = await guildApi.getAllRealms();
+      realms.forEach(realm => {
+        this.realms.push(realm.name)
+      });
     } catch (e) {
       console.error(e)
     }

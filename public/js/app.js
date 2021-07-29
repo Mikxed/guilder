@@ -2008,6 +2008,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2022,6 +2030,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _this = this;
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var realms;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -2031,21 +2040,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return _api_guild__WEBPACK_IMPORTED_MODULE_1__["default"].getAllRealms();
 
             case 3:
-              _this.realms = _context.sent;
-              _context.next = 9;
+              realms = _context.sent;
+              realms.forEach(function (realm) {
+                _this.realms.push(realm.name);
+              });
+              _context.next = 10;
               break;
 
-            case 6:
-              _context.prev = 6;
+            case 7:
+              _context.prev = 7;
               _context.t0 = _context["catch"](0);
               console.error(_context.t0);
 
-            case 9:
+            case 10:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 6]]);
+      }, _callee, null, [[0, 7]]);
     }))();
   },
   methods: {
@@ -39386,6 +39398,38 @@ var render = function() {
                   }
                 },
                 [_c("label", [_vm._v("Realm")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "md-layout" },
+                [
+                  _c(
+                    "md-autocomplete",
+                    {
+                      attrs: { "md-options": _vm.players },
+                      model: {
+                        value: _vm.guildRealm,
+                        callback: function($$v) {
+                          _vm.guildRealm = $$v
+                        },
+                        expression: "guildRealm"
+                      }
+                    },
+                    [_c("label", [_vm._v("Invite player")])]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "md-button",
+                    {
+                      staticClass: "md-fab md-mini md-primary md-raised",
+                      on: { click: _vm.onAdd }
+                    },
+                    [_c("md-icon", [_vm._v("add")])],
+                    1
+                  )
+                ],
+                1
               )
             ],
             1
@@ -88361,8 +88405,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Miko\Documents\Projects\guilder\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Miko\Documents\Projects\guilder\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! F:\Koodi\Projektit\guilder\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! F:\Koodi\Projektit\guilder\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
